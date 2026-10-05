@@ -2,7 +2,7 @@
 require_once dirname(__DIR__) . '/includes/config.php';
 
 $page_title = 'Portfolio | ' . $site_name;
-$page_description = 'See locs, color, cuts, and styles from Gypsie Locs Hair Studio in Waterford, MI.';
+$page_description = 'See color, extensions, and styles from Gypsie Locs Hair Studio in Waterford, MI.';
 $body_class = 'page-portfolio';
 $canonical_path = '/portfolio/';
 
@@ -20,7 +20,7 @@ require dirname(__DIR__) . '/includes/header.php';
 <header class="page-hero">
     <div class="wrap">
         <h1 class="page-title">Portfolio</h1>
-        <p class="page-lead">Real client work — photos coming soon from Joanna. Filters ready for the full gallery.</p>
+        <p class="page-lead">Client work from Gypsie Locs Hair Studio — more photos coming as Joanna adds them.</p>
     </div>
 </header>
 
@@ -36,8 +36,21 @@ require dirname(__DIR__) . '/includes/header.php';
     <ul class="portfolio-grid" id="portfolio-grid">
         <?php foreach ($portfolio_items as $item): ?>
             <li class="portfolio-item" data-category="<?= htmlspecialchars($item['category']) ?>">
-                <button type="button" class="portfolio-tile" data-lightbox="<?= htmlspecialchars($item['alt']) ?>" aria-label="<?= htmlspecialchars($item['alt']) ?>">
-                    <span class="portfolio-placeholder cat-<?= htmlspecialchars($item['category']) ?>"></span>
+                <button
+                    type="button"
+                    class="portfolio-tile"
+                    data-lightbox-src="<?= htmlspecialchars(url($item['src'])) ?>"
+                    data-lightbox-alt="<?= htmlspecialchars($item['alt']) ?>"
+                    aria-label="<?= htmlspecialchars($item['alt']) ?>"
+                >
+                    <img
+                        src="<?= htmlspecialchars(url($item['src'])) ?>"
+                        alt="<?= htmlspecialchars($item['alt']) ?>"
+                        width="640"
+                        height="800"
+                        loading="lazy"
+                        decoding="async"
+                    >
                     <span class="portfolio-label"><?= htmlspecialchars($item['label']) ?></span>
                 </button>
             </li>

@@ -23,7 +23,6 @@
     });
   }
 
-  // Sticky Book Now after scrolling past hero / header
   if (stickyBook) {
     const revealAt = () => {
       const y = window.scrollY || document.documentElement.scrollTop;
@@ -34,9 +33,8 @@
     window.addEventListener('scroll', revealAt, { passive: true });
   }
 
-  // Portfolio filters
   const filterBtns = document.querySelectorAll('.filter-btn');
-  const items = document.querySelectorAll('.portfolio-item');
+  const items = document.querySelectorAll('.portfolio-item[data-category]');
   if (filterBtns.length && items.length) {
     filterBtns.forEach((btn) => {
       btn.addEventListener('click', () => {
@@ -51,15 +49,19 @@
     });
   }
 
-  // Simple touch-friendly lightbox for placeholders / future images
   const lightbox = document.getElementById('lightbox');
   const lightboxBody = document.getElementById('lightbox-body');
   const lightboxClose = document.getElementById('lightbox-close');
   if (lightbox && lightboxBody) {
-    document.querySelectorAll('[data-lightbox]').forEach((tile) => {
+    document.querySelectorAll('[data-lightbox-src]').forEach((tile) => {
       tile.addEventListener('click', () => {
-        const label = tile.getAttribute('data-lightbox') || 'Portfolio';
-        lightboxBody.textContent = label + ' — client photos coming soon.';
+        const src = tile.getAttribute('data-lightbox-src');
+        const alt = tile.getAttribute('data-lightbox-alt') || 'Portfolio';
+        lightboxBody.innerHTML = '';
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = alt;
+        lightboxBody.appendChild(img);
         if (typeof lightbox.showModal === 'function') {
           lightbox.showModal();
         }

@@ -58,16 +58,36 @@ $service_groups = [
 ];
 
 /*
- * Portfolio placeholders until Joanna supplies photos.
+ * Portfolio from Ultra Salon Suites public listing.
  * category: locs | color | cuts | styles
  */
 $portfolio_items = [
-    ['id' => 1, 'category' => 'locs', 'label' => 'Locs', 'alt' => 'Locs work placeholder'],
-    ['id' => 2, 'category' => 'locs', 'label' => 'Locs', 'alt' => 'Locs work placeholder'],
-    ['id' => 3, 'category' => 'color', 'label' => 'Color', 'alt' => 'Color work placeholder'],
-    ['id' => 4, 'category' => 'color', 'label' => 'Color', 'alt' => 'Color work placeholder'],
-    ['id' => 5, 'category' => 'cuts', 'label' => 'Cuts', 'alt' => 'Cut work placeholder'],
-    ['id' => 6, 'category' => 'styles', 'label' => 'Styles', 'alt' => 'Styling work placeholder'],
-    ['id' => 7, 'category' => 'locs', 'label' => 'Locs', 'alt' => 'Locs work placeholder'],
-    ['id' => 8, 'category' => 'styles', 'label' => 'Styles', 'alt' => 'Styling work placeholder'],
+    [
+        'id'       => 1,
+        'category' => 'styles',
+        'label'    => 'Extensions',
+        'alt'      => 'Before and after hair extensions with long wavy honey-brown style',
+        'src'      => 'assets/img/portfolio/work-01.jpg',
+    ],
+    [
+        'id'       => 2,
+        'category' => 'color',
+        'label'    => 'Color',
+        'alt'      => 'Blonde color guide — ash, honey, sandy, metallic, pearl, beige, ice, bronde',
+        'src'      => 'assets/img/portfolio/work-02.jpg',
+    ],
+    [
+        'id'       => 3,
+        'category' => 'color',
+        'label'    => 'Color',
+        'alt'      => 'Deep burgundy red hair color with glossy finish',
+        'src'      => 'assets/img/portfolio/work-03.jpg',
+    ],
+    [
+        'id'       => 4,
+        'category' => 'color',
+        'label'    => 'Balayage',
+        'alt'      => 'Red to copper to blonde balayage waves',
+        'src'      => 'assets/img/portfolio/work-04.jpg',
+    ],
 ];

@@ -4,7 +4,7 @@ $page_description = $page_description ?? $site_description;
 $body_class = $body_class ?? '';
 $canonical_path = $canonical_path ?? current_path();
 $canonical_url = absolute_url(ltrim($canonical_path === '/' ? '' : $canonical_path, '/'));
-$og_image = $og_image ?? absolute_url('assets/img/og-default.svg');
+$og_image = $og_image ?? absolute_url('assets/img/hero/cover.jpg');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,8 +34,11 @@ $og_image = $og_image ?? absolute_url('assets/img/og-default.svg');
     <header class="site-header" id="site-header">
         <div class="header-inner">
             <a class="logo" href="<?= htmlspecialchars(url()) ?>">
-                <span class="logo-mark">Gypsie Locs</span>
-                <span class="logo-sub">Hair Studio</span>
+                <img class="logo-img" src="<?= htmlspecialchars(url('assets/img/logo/gypsie-locs-logo.jpg')) ?>" alt="" width="44" height="44" decoding="async">
+                <span class="logo-text">
+                    <span class="logo-mark">Gypsie Locs</span>
+                    <span class="logo-sub">Hair Studio</span>
+                </span>
             </a>
 
             <div class="header-actions">

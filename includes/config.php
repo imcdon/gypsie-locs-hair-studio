@@ -29,8 +29,7 @@ $address = [
 $hours_note = 'Hours vary — book online for available times.';
 
 $social = [
-    // Confirm Instagram handle with Joanna
-    'instagram' => '',
+    'instagram' => 'https://www.instagram.com/Gypsielocshairstudio/',
 ];
 
 // GlossGenius — all Book Now buttons use these

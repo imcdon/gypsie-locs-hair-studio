@@ -11,7 +11,16 @@ require __DIR__ . '/includes/header.php';
 
 <section class="hero" aria-label="<?= htmlspecialchars($site_name) ?>">
     <div class="hero-media" aria-hidden="true">
-        <div class="hero-texture"></div>
+        <img
+            class="hero-photo"
+            src="<?= htmlspecialchars(url('assets/img/hero/cover.jpg')) ?>"
+            alt=""
+            width="1200"
+            height="800"
+            fetchpriority="high"
+            decoding="async"
+        >
+        <div class="hero-overlay"></div>
     </div>
     <div class="hero-content">
         <p class="hero-brand">Gypsie Locs Hair Studio</p>
@@ -33,6 +42,30 @@ require __DIR__ . '/includes/header.php';
             <a href="<?= htmlspecialchars(url('about/')) ?>">Meet Joanna</a>
             <a href="<?= htmlspecialchars(url('contact/')) ?>">Find the suite</a>
         </div>
+    </div>
+</section>
+
+<section class="section section-home-work" aria-labelledby="home-work-title">
+    <div class="wrap">
+        <h2 class="section-title" id="home-work-title">Recent work</h2>
+        <p class="section-lead">Color, extensions, and custom styles from the chair.</p>
+        <ul class="portfolio-grid portfolio-grid-home">
+            <?php foreach (array_slice($portfolio_items, 0, 4) as $item): ?>
+                <li class="portfolio-item">
+                    <a class="portfolio-tile" href="<?= htmlspecialchars(url('portfolio/')) ?>">
+                        <img
+                            src="<?= htmlspecialchars(url($item['src'])) ?>"
+                            alt="<?= htmlspecialchars($item['alt']) ?>"
+                            width="640"
+                            height="800"
+                            loading="lazy"
+                            decoding="async"
+                        >
+                        <span class="portfolio-label"><?= htmlspecialchars($item['label']) ?></span>
+                    </a>
+                </li>
+            <?php endforeach; ?>
+        </ul>
     </div>
 </section>
 

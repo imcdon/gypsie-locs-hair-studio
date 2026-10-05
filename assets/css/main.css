@@ -114,17 +114,33 @@ a:hover {
 
 .logo {
   display: flex;
-  flex-direction: column;
-  gap: 0;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.65rem;
   text-decoration: none;
   color: var(--ink);
   line-height: 1.05;
   min-height: 44px;
-  justify-content: center;
 }
 
 .logo:hover {
   color: var(--ink);
+}
+
+.logo-img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 20%;
+  flex-shrink: 0;
+  border: 1px solid var(--line);
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 }
 
 .logo-mark {
@@ -327,29 +343,30 @@ a:hover {
 .hero-media {
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(ellipse 80% 60% at 70% 30%, rgba(201, 168, 124, 0.18), transparent 55%),
-    linear-gradient(160deg, #2a1f18 0%, #14100e 55%, #0c0a08 100%);
+  background: #1a1410;
+  overflow: hidden;
 }
 
-.hero-texture {
-  position: absolute;
-  inset: 0;
-  opacity: 0.35;
-  background-image:
-    repeating-linear-gradient(
-      -12deg,
-      transparent,
-      transparent 2px,
-      rgba(201, 168, 124, 0.03) 2px,
-      rgba(201, 168, 124, 0.03) 3px
-    );
+.hero-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 22%;
+  transform: scale(1.04);
   animation: heroDrift 18s ease-in-out infinite alternate;
 }
 
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(10, 7, 5, 0.25) 0%, rgba(10, 7, 5, 0.55) 45%, rgba(10, 7, 5, 0.88) 100%),
+    linear-gradient(90deg, rgba(10, 7, 5, 0.45) 0%, transparent 55%);
+}
+
 @keyframes heroDrift {
-  from { transform: scale(1) translate(0, 0); }
-  to { transform: scale(1.06) translate(-1.5%, 1%); }
+  from { transform: scale(1.04) translate(0, 0); }
+  to { transform: scale(1.1) translate(-1.2%, 1%); }
 }
 
 .hero-content {
@@ -590,41 +607,25 @@ a:hover {
   width: 100%;
   padding: 0;
   border: 0;
-  background: none;
+  background: var(--bg-elevated);
   cursor: pointer;
   overflow: hidden;
   aspect-ratio: 3 / 4;
+  color: inherit;
+  text-decoration: none;
 }
 
-.portfolio-placeholder {
-  display: block;
+.portfolio-tile img {
   width: 100%;
   height: 100%;
-  background: linear-gradient(145deg, #2c221c, #1a1410 60%);
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.45s var(--ease);
 }
 
-.portfolio-placeholder.cat-locs {
-  background:
-    radial-gradient(circle at 30% 40%, rgba(201, 168, 124, 0.25), transparent 45%),
-    linear-gradient(160deg, #3a2a20, #15110e);
-}
-
-.portfolio-placeholder.cat-color {
-  background:
-    radial-gradient(circle at 70% 30%, rgba(180, 90, 70, 0.28), transparent 40%),
-    linear-gradient(200deg, #2a1c18, #120e0c);
-}
-
-.portfolio-placeholder.cat-cuts {
-  background:
-    radial-gradient(circle at 50% 60%, rgba(160, 150, 140, 0.2), transparent 45%),
-    linear-gradient(180deg, #242018, #12100e);
-}
-
-.portfolio-placeholder.cat-styles {
-  background:
-    radial-gradient(circle at 40% 30%, rgba(201, 168, 124, 0.15), transparent 50%),
-    linear-gradient(120deg, #2a221c, #0f0c0a);
+.portfolio-tile:hover img,
+.portfolio-tile:focus-visible img {
+  transform: scale(1.04);
 }
 
 .portfolio-label {
@@ -637,6 +638,10 @@ a:hover {
   color: var(--ink);
   background: rgba(10, 7, 5, 0.55);
   padding: 0.25rem 0.45rem;
+}
+
+.portfolio-grid-home {
+  margin-top: 0.5rem;
 }
 
 .section-cta-inline {
@@ -677,13 +682,39 @@ a:hover {
 }
 
 .lightbox-body {
-  min-height: 16rem;
-  padding: 3rem 1.25rem 1.5rem;
+  min-height: 12rem;
+  padding: 2.75rem 0.75rem 0.75rem;
   text-align: center;
-  color: var(--muted);
+}
+
+.lightbox-body img {
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  object-fit: contain;
 }
 
 /* About / contact / book */
+.about-layout {
+  display: grid;
+  gap: 1.75rem;
+}
+
+.about-photo {
+  margin: 0;
+  overflow: hidden;
+  border-radius: var(--radius);
+  aspect-ratio: 1;
+  max-width: 22rem;
+}
+
+.about-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+}
+
 .about-body p {
   color: var(--muted);
 }
@@ -881,6 +912,12 @@ a:hover {
   .portfolio-grid {
     grid-template-columns: repeat(4, 1fr);
     gap: 0.75rem;
+  }
+
+  .about-layout {
+    grid-template-columns: minmax(14rem, 20rem) 1fr;
+    align-items: start;
+    gap: 2.5rem;
   }
 
   .contact-grid {
