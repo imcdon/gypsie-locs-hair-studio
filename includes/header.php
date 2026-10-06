@@ -4,7 +4,7 @@ $page_description = $page_description ?? $site_description;
 $body_class = $body_class ?? '';
 $canonical_path = $canonical_path ?? current_path();
 $canonical_url = absolute_url(ltrim($canonical_path === '/' ? '' : $canonical_path, '/'));
-$og_image = $og_image ?? absolute_url('assets/img/hero/cover.jpg');
+$og_image = $og_image ?? absolute_url('assets/img/hero/atelier.jpg');
 ?>
 <!DOCTYPE html>
 <html lang="en">

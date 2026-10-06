@@ -13,7 +13,7 @@ require __DIR__ . '/includes/header.php';
     <div class="hero-media" aria-hidden="true">
         <img
             class="hero-photo"
-            src="<?= htmlspecialchars(url('assets/img/hero/cover.jpg')) ?>"
+            src="<?= htmlspecialchars(url('assets/img/hero/atelier.jpg')) ?>"
             alt=""
             width="1200"
             height="800"
