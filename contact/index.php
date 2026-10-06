@@ -40,7 +40,7 @@ require dirname(__DIR__) . '/includes/header.php';
     <div class="contact-block contact-book">
         <h2 class="section-title-sm">Book</h2>
         <p>Appointments are scheduled online.</p>
-        <a class="btn btn-book btn-lg" <?= booking_attrs() ?>>Book Now</a>
+        <a class="btn btn-book btn-lg" <?= booking_attrs() ?>>Reserve</a>
     </div>
 </div>
 

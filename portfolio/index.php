@@ -59,7 +59,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
     <div class="section-cta-inline">
         <p>Love what you see? Reserve your chair.</p>
-        <a class="btn btn-book btn-lg" <?= booking_attrs() ?>>Book Now</a>
+        <a class="btn btn-book btn-lg" <?= booking_attrs() ?>>Reserve</a>
     </div>
 </div>
 

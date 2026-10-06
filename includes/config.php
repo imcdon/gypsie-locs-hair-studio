@@ -8,8 +8,8 @@ require_once __DIR__ . '/services-data.php';
 $site_name = 'Gypsie Locs Hair Studio';
 $site_domain = 'gypsielocshairstudio.com'; // TBD — update when domain is confirmed
 $site_url = 'https://gypsielocshairstudio.com';
-$site_tagline = 'Locs, color, and custom hair care in Waterford, MI.';
-$site_description = 'Gypsie Locs Hair Studio — Joanna Shaver. Locs, cuts, color, and styling at Ultra Salon Suites in Waterford, Michigan. Book online.';
+$site_tagline = 'Private suite hair artistry in Waterford, Michigan.';
+$site_description = 'Gypsie Locs Hair Studio — Joanna Shaver. Luxury color, locs, extensions, and custom styling at Ultra Salon Suites in Waterford, Michigan. Reserve online.';
 $owner_name = 'Joanna Shaver';
 
 $phone = '(248) 425-5110';

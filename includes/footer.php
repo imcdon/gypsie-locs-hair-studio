@@ -44,15 +44,15 @@ if (!empty($social['instagram'])) {
                 <?php endif; ?>
             </div>
             <div class="footer-cta">
-                <a class="btn btn-book" <?= booking_attrs() ?>>Book Now</a>
-                <p class="footer-note">Online booking powered by GlossGenius</p>
+                <a class="btn btn-book" <?= booking_attrs() ?>>Reserve</a>
+                <p class="footer-note">Private scheduling powered by GlossGenius</p>
             </div>
         </div>
         <p class="footer-copy">&copy; <?= date('Y') ?> <?= htmlspecialchars($site_name) ?></p>
     </footer>
 
     <div class="sticky-book" id="sticky-book">
-        <a class="btn btn-book btn-book-sticky" <?= booking_attrs() ?>>Book Now</a>
+        <a class="btn btn-book btn-book-sticky" <?= booking_attrs() ?>>Reserve</a>
     </div>
 
     <script type="application/ld+json"><?= json_encode($json_ld, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) ?></script>

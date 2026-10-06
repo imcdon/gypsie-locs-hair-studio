@@ -41,7 +41,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <p><a class="link-book" <?= booking_attrs($booking_url) ?>>Open booking site</a> for services and policies.</p>
 
         <div class="section-cta-inline">
-            <a class="btn btn-book btn-lg" <?= booking_attrs() ?>>Book with Joanna</a>
+            <a class="btn btn-book btn-lg" <?= booking_attrs() ?>>Reserve with Joanna</a>
         </div>
     </div>
 </div>

@@ -42,7 +42,7 @@ $og_image = $og_image ?? absolute_url('assets/img/hero/cover.jpg');
             </a>
 
             <div class="header-actions">
-                <a class="btn btn-book btn-book-header" <?= booking_attrs() ?>>Book Now</a>
+                <a class="btn btn-book btn-book-header" <?= booking_attrs() ?>>Reserve</a>
                 <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
                     <span class="nav-toggle-bars" aria-hidden="true"><span></span><span></span><span></span></span>
                     <span class="visually-hidden">Menu</span>
@@ -55,7 +55,7 @@ $og_image = $og_image ?? absolute_url('assets/img/hero/cover.jpg');
                         <li><a href="<?= htmlspecialchars(url($href)) ?>"><?= htmlspecialchars($label) ?></a></li>
                     <?php endforeach; ?>
                     <li class="nav-book-mobile">
-                        <a class="btn btn-book" <?= booking_attrs() ?>>Book Now</a>
+                        <a class="btn btn-book" <?= booking_attrs() ?>>Reserve</a>
                     </li>
                 </ul>
             </nav>

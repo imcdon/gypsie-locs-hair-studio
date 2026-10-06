@@ -252,17 +252,17 @@ a:hover {
   align-items: center;
   justify-content: center;
   min-height: 44px;
-  padding: 0.65rem 1.15rem;
+  padding: 0.7rem 1.35rem;
   font-family: var(--font-body);
-  font-size: 0.92rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   text-decoration: none;
-  border-radius: var(--radius);
+  border-radius: 0;
   border: 1px solid transparent;
   cursor: pointer;
-  transition: background 0.2s var(--ease), color 0.2s, border-color 0.2s;
+  transition: background 0.25s var(--ease), color 0.25s, border-color 0.25s;
 }
 
 .btn-book {
@@ -394,18 +394,20 @@ a:hover {
 
 .hero-title {
   margin: 0 0 0.85rem;
-  font-family: var(--font-body);
-  font-size: 1.05rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 3.5vw, 1.75rem);
   font-weight: 500;
-  color: var(--muted);
-  letter-spacing: 0.02em;
+  font-style: italic;
+  color: var(--ink);
+  letter-spacing: 0.01em;
 }
 
 .hero-lead {
-  margin: 0 0 1.5rem;
-  max-width: 28rem;
+  margin: 0 0 1.75rem;
+  max-width: 26rem;
   color: var(--muted);
-  font-size: 0.98rem;
+  font-size: 0.95rem;
+  line-height: 1.65;
 }
 
 .hero-actions {
@@ -416,11 +418,20 @@ a:hover {
 
 /* Sections */
 .section {
-  padding: 3rem 0;
+  padding: 3.5rem 0;
 }
 
-.section-intro {
-  border-top: 1px solid var(--line);
+.section-head {
+  margin-bottom: 2rem;
+}
+
+.section-eyebrow {
+  margin: 0 0 0.65rem;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
 }
 
 .section-cta {
@@ -430,130 +441,276 @@ a:hover {
 }
 
 .section-title {
-  margin: 0 0 0.65rem;
+  margin: 0 0 0.75rem;
   font-family: var(--font-display);
-  font-size: clamp(1.85rem, 5vw, 2.6rem);
-  font-weight: 600;
-  line-height: 1.15;
+  font-size: clamp(2rem, 5.5vw, 2.85rem);
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: 0.01em;
 }
 
 .section-title-sm {
   margin: 0 0 0.75rem;
   font-family: var(--font-display);
   font-size: 1.55rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .section-lead {
-  margin: 0 0 1.5rem;
+  margin: 0;
   color: var(--muted);
-  max-width: 32rem;
+  max-width: 34rem;
+  line-height: 1.65;
+  font-size: 0.98rem;
 }
 
 .section-cta .section-lead {
-  margin-inline: auto;
+  margin: 0 auto 1.75rem;
 }
 
-.intro-links {
+.section-foot {
+  margin: 2.25rem 0 0;
   display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
-}
-
-.intro-links a {
-  display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  min-height: 44px;
+  gap: 0.65rem 0.85rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.section-foot .sep {
+  opacity: 0.5;
+}
+
+.text-link {
   color: var(--ink);
-  font-weight: 500;
   text-decoration: none;
+  border-bottom: 1px solid rgba(201, 168, 124, 0.45);
+  padding-bottom: 0.08em;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.text-link:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* Home service spotlight */
+.section-services-home {
+  border-top: 1px solid var(--line);
+}
+
+.service-spotlight {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+
+.service-spotlight-item {
   border-bottom: 1px solid var(--line);
 }
 
-.intro-links a:hover {
+.service-spotlight-link {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr;
+  gap: 0.85rem 1rem;
+  align-items: start;
+  padding: 1.35rem 0;
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.25s var(--ease);
+}
+
+.service-spotlight-link:hover {
+  color: inherit;
+}
+
+.service-spotlight-index {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--accent);
+  padding-top: 0.15rem;
+}
+
+.service-spotlight-title {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(1.45rem, 4vw, 1.85rem);
+  font-weight: 500;
+  line-height: 1.15;
+  margin-bottom: 0.4rem;
+}
+
+.service-spotlight-lede {
+  display: block;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.55;
+  max-width: 36rem;
+}
+
+.service-spotlight-price {
+  grid-column: 2;
+  margin-top: 0.65rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   color: var(--accent);
 }
 
 .page-hero {
-  padding: 2.25rem 0 1rem;
+  padding: 2.75rem 0 1.5rem;
   border-bottom: 1px solid var(--line);
 }
 
+.page-hero-services {
+  text-align: left;
+}
+
 .page-title {
-  margin: 0 0 0.5rem;
+  margin: 0 0 0.65rem;
   font-family: var(--font-display);
-  font-size: clamp(2.1rem, 7vw, 3.2rem);
-  font-weight: 600;
+  font-size: clamp(2.25rem, 7vw, 3.4rem);
+  font-weight: 500;
   line-height: 1.05;
 }
 
 .page-lead {
-  margin: 0 0 1.25rem;
+  margin: 0 0 1.5rem;
   color: var(--muted);
-  max-width: 34rem;
+  max-width: 36rem;
+  line-height: 1.65;
 }
 
-/* Services */
-.service-group {
-  margin-bottom: 2.25rem;
+.wrap-menu {
+  width: min(100% - 2rem, 42rem);
 }
 
-.service-group-head {
+/* Service jump */
+.service-jump {
   display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-bottom: 0.75rem;
-  padding-bottom: 0.5rem;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.15rem;
+  padding: 1.15rem 0;
   border-bottom: 1px solid var(--line);
 }
 
-.service-group-title {
-  margin: 0;
-  font-family: var(--font-display);
-  font-size: 1.65rem;
-  font-weight: 600;
+.service-jump a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
 }
 
-.service-list {
+.service-jump a:hover {
+  color: var(--accent);
+}
+
+/* Luxury menu */
+.section-menu {
+  padding-top: 2.5rem;
+}
+
+.menu-group {
+  margin-bottom: 3.25rem;
+  scroll-margin-top: calc(var(--header-h) + 1rem);
+}
+
+.menu-group-head {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr;
+  gap: 0.85rem 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.menu-group-index {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--accent);
+  padding-top: 0.35rem;
+}
+
+.menu-group-title {
+  margin: 0 0 0.45rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 4vw, 2.15rem);
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.menu-group-lede {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  max-width: 34rem;
+}
+
+.menu-list {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.service-row {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 0.85rem 0;
+.menu-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  align-items: end;
+  gap: 0.5rem 0.65rem;
+  padding: 0.95rem 0;
   border-bottom: 1px solid var(--line);
 }
 
-.service-name {
+.menu-name {
   display: block;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
   font-weight: 500;
+  letter-spacing: 0.01em;
 }
 
-.service-note {
+.menu-note {
   display: block;
-  margin-top: 0.2rem;
-  font-size: 0.82rem;
+  margin-top: 0.25rem;
+  font-size: 0.78rem;
   color: var(--muted);
+  font-style: italic;
 }
 
-.service-price {
+.menu-rule {
+  width: 2.5rem;
+  min-width: 1.5rem;
+  border-bottom: 1px dotted rgba(185, 169, 154, 0.45);
+  margin-bottom: 0.45rem;
+  opacity: 0.7;
+}
+
+.menu-price {
   flex-shrink: 0;
-  font-size: 0.92rem;
-  color: var(--accent);
-  font-weight: 600;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  color: var(--muted);
   text-align: right;
+  white-space: nowrap;
+  padding-bottom: 0.1rem;
+}
+
+.menu-group-cta {
+  margin: 1.15rem 0 0;
 }
 
 .price-disclaimer {
-  margin: 2rem 0 0;
-  font-size: 0.85rem;
+  margin: 2.5rem 0 0;
+  font-size: 0.8rem;
   color: var(--muted);
+  line-height: 1.55;
+  max-width: 36rem;
 }
 
 /* Portfolio */
@@ -897,16 +1054,21 @@ a:hover {
     padding: 4rem 0 4.5rem;
   }
 
-  .intro-links {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 1.5rem;
+  .service-spotlight-link {
+    grid-template-columns: 3rem minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 1.25rem 1.75rem;
+    padding: 1.65rem 0;
   }
 
-  .intro-links a {
-    border: 0;
-    text-decoration: underline;
-    text-underline-offset: 0.2em;
+  .service-spotlight-price {
+    grid-column: auto;
+    margin-top: 0;
+    justify-self: end;
+  }
+
+  .section {
+    padding: 5rem 0;
   }
 
   .portfolio-grid {
@@ -928,10 +1090,6 @@ a:hover {
   .footer-inner {
     grid-template-columns: 1.4fr 1fr 1fr;
     align-items: start;
-  }
-
-  .section {
-    padding: 4rem 0;
   }
 }
 
